@@ -1,0 +1,379 @@
+<!doctype html>
+<html ng-app="website">
+<head>
+<!-- required meta tags -->
+    <meta charset="utf-8">
+    
+    <meta name="description" content="The Telangana Technical Students Welfare Association (<strong>TTSWA</strong>)
+						is a state student's organization created to develop skills in
+						engineering education.">
+    <meta name="keywords" content="TTSWA , telangana, students, Technical students,  welfare,  association">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="172958109848-2npkd98vilr78d806n8eiler6lfegnb6.apps.googleusercontent.com">
+    
+    <title>TTSWA</title>
+    
+  
+    <link rel="stylesheet" href="./css/website.css">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+   <link href="./css/style.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<!-- animate CSS -->
+    <link rel="stylesheet" href="css/animate/animate.css">
+    <!-- responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet">
+
+    <!-- fontawesome -->
+    <!-- <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
+
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="css/animate/animate.css">
+
+    <!-- magnific-popup CSS -->
+    <link rel="stylesheet" href="css/magnific-popup/magnific-popup.css">
+
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="css/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl-carousel/owl.theme.default.min.css">
+
+    <!-- style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    
+	
+</head>
+<body data-spy="scroll" data-target=".navbar-fixed-top" data-offset="65">
+<!-- top -->
+
+<div class="row">
+    <div class="col-sm-12" >
+    <header>
+		<div>
+			
+		</div>
+		<div>  <span class="hr_line"></span> </div>
+		<nav class="navbar navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="ttswa-nav-wrapper">
+                    <div class="navbar-header">
+                       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#ttswa-menu">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                       </button>
+                    </div>
+							<div id="logo1">
+								<a class="navbar-brand" href="#/home"> </a>
+							</div>
+
+							<div class="collapse navbar-collapse menulinks" id="ttswa-menu">
+                        <ul class="nav navbar-nav">
+                            <li><a class="smooth-scroll" href="#/home">Home</a></li>
+                            <li><a class="smooth-scroll" href="#/about">About</a></li>
+                            <li><a class="smooth-scroll" href="#/ourVision">Our Vision</a></li>
+                            <li><a class="smooth-scroll" href="#/administration">Administration</a></li>
+                            <li><a class="smooth-scroll" href="#/gallery">Gallery</a></li>
+							<li><a class="smooth-scroll" href="#/studentCorner">StudentCorner</a></li>
+                            <li><a class="smooth-scroll" href="#/contact">Contact</a></li>
+                             <li><a class="smooth-scroll" href="#/register">Register</a></li>
+                            
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+        </nav>
+
+    </header>
+    </div>
+    
+  </div>
+	<div class="row">
+		<div class="col-sm-2">
+			<div class="cleaner h20"></div>
+			<div class="cleaner h20"></div>
+			<div class="cleaner h20"></div>
+			<div class="cleaner h20"></div>
+			<div class="cleaner h20"></div>
+			<div class="cleaner h20"></div>
+			<div class="cleaner h20"></div>
+			<div class="cleaner h20"></div>
+			<div class="cleaner h20"></div>
+			<div>
+				<h2>Latest News</h2>
+				<ul class="">
+					<li><a href="#">Press Release</a></li>
+					<li><a href="#">Photo Gallery</a></li>
+					<li><a href="#">Updates</a></li>
+				</ul>
+			</div>
+
+
+		</div>
+		<div class="col-sm-8">
+			<div id="container">
+				<div id="center"></div>
+				<div class="container">
+	<div class="content-box">
+		<div class="content-title wow animated fadeInDown"
+			data-wow-duration="1s" data-wow-delay=".5s">
+			<h1>
+				<strong>Register</strong>
+			</h1>
+			<div class="content-title-underline"></div>
+		</div>
+
+		<div class="row wow animated fadeInUp" data-wow-duration="1s"
+			data-wow-delay=".5s">
+			<div class="col-md-8">
+
+				<div class="formContainer" align="center" id="form_container">
+					<form class="form-inline" role="form" style="align: center;"
+						action="register" method="post" name="stdForm">
+						<div class="form-group">
+						<span>
+						stdForm.firstName.$valid: {{stdForm.firstName.$valid }}
+						stdForm.firstName.$dirty: {{stdForm.firstName.$dirty}}
+						stdForm.firstName.$pristine: {{stdForm.firstName.$pristine}}
+						stdForm.firstName.$error: {{stdForm.firstName.$error}}
+						stdForm.firstName.$invalid: {{stdForm.firstName.$invalid}}
+						</span>
+						{{1+2}}
+							<label for="firstName">First Name :</label> <input type="text"  class="form-control" ng-model="student.firstName" name="firstName"
+								size="28" required>
+								<span ng-show="stdForm.firstName.$error.required && stdForm.firstName.$dirty" class="small text-muted ">This field is required</span>
+						</div>
+						<div class="form-group">
+							<label>LST_NM:</label> <input type="text"  class="form-control" ng-model="student.lastName" name="lastName"
+								size="28" required>
+						</div>
+						<div class="form-group">
+							<label>Gender:</label> <input type="radio" class="form-control" ng-model="student.gender" name="gender"
+								value="male"> Male &nbsp; <input type="radio"
+								name="gender" value="female"> Female<br>
+						</div>
+						<div class="form-group">
+							<label>EMAIL_ADR :</label> <input type="text" class="form-control" ng-model="student.email_adr" name="email_adr"
+								size="28" required>
+						</div>
+						<div class="form-group">
+							<label>MOBL_NM:</label> <input type="text" class="form-control" ng-model="student.mobl_nm"  name="mobl_nm"
+								size="28" required>
+						</div>
+						<div class="form-group">
+							<label>Occupation:</label> <input type="radio" class="form-control" ng-model="student.occupationId1" id="occupationId1"
+								name="occupation" value="student"> Student &nbsp; <input
+								type="radio"  class="form-control" ng-model="student.occupationId2" id="occupationId2" name="occupation"
+								value="teaching"> Teaching<br>
+						</div>
+
+						<div class="form-group">
+							<label>COLG_NM:</label> <input type="text" class="form-control" ng-model="student.colg_nm" name="colg_nm"
+								size="28" required>
+						</div>
+						<div class="form-group">
+							<label>COLG_UNIVRSTY:</label> <input type="text" class="form-control" ng-model="student.univ_nm" name="univ_nm"
+								size="28" required>
+						</div>
+
+						<div class="form-group">
+							<label>JOIN_YEAR:</label> <select name="colg_join_year" class="form-control" ng-model="student.colg_join_year" required>
+								<option value='1981'>1981</option>
+								<option value='1982'>1982</option>
+								<option value='1983'>1983</option>
+								<option value='1984'>1984</option>
+								<option value='1985'>1985</option>
+								<option value='1986'>1986</option>
+								<option value='1987'>1987</option>
+								<option value='1988'>1988</option>
+								<option value='1989'>1989</option>
+								<option value='1990'>1990</option>
+								<option value='1991'>1991</option>
+								<option value='1992'>1992</option>
+								<option value='1993'>1993</option>
+								<option value='1986'>1994</option>
+								<option value='1987'>1995</option>
+								<option value='1988'>1996</option>
+								<option value='1989'>1997</option>
+								<option value='1990'>1998</option>
+								<option value='1991'>1999</option>
+								<option value='1992'>2000</option>
+								<option value='1993'>2001</option>
+								<option value='1992'>1992</option>
+								<option value='1993'>1993</option>
+								<option value='1986'>1994</option>
+								<option value='1987'>1995</option>
+								<option value='1988'>1996</option>
+								<option value='1989'>1997</option>
+								<option value='1990'>1998</option>
+								<option value='1991'>1999</option>
+								<option value='2000'>2000</option>
+								<option value='2001'>2001</option>
+								<option value='2002'>2002</option>
+								<option value='2003'>2003</option>
+								<option value='2004'>2004</option>
+								<option value='2005'>2005</option>
+								<option value='2006'>2006</option>
+								<option value='2007'>2007</option>
+								<option value='2008'>2008</option>
+								<option value='2009'>2009</option>
+								<option value='2010'>2010</option>
+								<option value='2011'>2011</option>
+								<option value='2012'>2012</option>
+								<option value='2013'>2013</option>
+								<option value='2014'>2014</option>
+								<option value='2015'>2015</option>
+								<option value='2016'>2016</option>
+								<option value='2017'>2017</option>
+								<option value='2018'>2018</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label>ADR_L1:</label> <input type="text" class="form-control" ng-model="student.adr_ln1" name="adr_ln1"
+								size="28" required>
+						</div>
+						<div class="form-group">
+							<label>ADR_L2:</label> <input type="text" class="form-control" ng-model="student.adr_ln2" name="adr_ln2"
+								size="28" required>
+						</div>
+						<div class="form-group">
+							<label>District:</label> <select name="district" class="form-control" ng-model="student.district" required>
+								<option value="Adilabad">Adilabad</option>
+								<option value="Bhadradri Kothagudem">Bhadradri
+									Kothagudem</option>
+								<option value="Hyderabad">Hyderabad</option>
+								<option value="Jagtial">Jagtial</option>
+								<option value="Jangaon">Jangaon</option>
+								<option value="Jayashankar Bhupalapally">Jayashankar
+									Bhupalapally</option>
+								<option value="Jogulamba Gadwal">Jogulamba Gadwal</option>
+								<option value="Kamareddy">Kamareddy</option>
+								<option value="Karimnagar">Karimnagar</option>
+								<option value="Khammam">Khammam</option>
+								<option value="Kumarambheem Asifabad">Kumarambheem
+									Asifabad</option>
+								<option value="Mahabubabad">Mahabubabad</option>
+								<option value="Mahabubnagar">Mahabubnagar</option>
+								<option value="Mancherial">Mancherial</option>
+								<option value="Medak">Medak</option>
+								<option value="Jangaon">Jangaon</option>
+								<option value="Jangaon">Jangaon</option>
+								<option value="Jangaon">Jangaon</option>
+								<option value="Jangaon">Jangaon</option>
+								<option value="Jangaon">Jangaon</option>
+								<option value="Jangaon">Jangaon</option>
+								<option value="Jangaon">Jangaon</option>
+								<option value="Jangaon">Jangaon</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label>STATE:</label> <input type="text"  ng-model="student.state" name="state" size="28"
+								value="Telanagan" style="" required>
+						</div>
+
+						<div class="form-group">
+							<input class="btn btn-primary" type="submit" value="Submit" ng-disabled="stdForm.$invalid">  &nbsp; &nbsp; <input class="btn btn-primary" type="reset" value="Reset" ng-disabled="stdForm.$pristine">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+				
+			</div>
+
+		</div>
+		<div class="col-sm-2">.</div>
+	</div>
+	
+	<!--  affilated collages section-->
+	
+	<!-- end affilated collages section-->
+
+	<div class="row">
+    <div class="col-sm-12" >
+			<div>
+				<footer class="footer-basic-centered">
+					<div class="leftmenu">
+						<a href="#" class="fa fa-facebook"></a> <a href="#"
+							class="fa fa-twitter"></a> <a href="#" class="fa fa-google"></a>
+						<a href="#" class="fa fa-linkedin"></a> <a href="#"
+							class="fa fa-youtube"></a> <a href="#" class="fa fa-instagram"></a>
+					</div>
+
+					<div class="rightmenu">
+						<p class="footer-links">
+						<h3>
+							<a href="#"> TELANGANA TECHNICAL STUDENTS WELFARE ASSOCIATION
+							</a>
+						</h3><div class=" center nav navbar-nav">
+                            <a class="smooth-scroll" href="#/home">Home</a> |
+                            <a class="smooth-scroll" href="#/about">About</a> |
+                            <a class="smooth-scroll" href="#/contact">Contact</a> |
+                             <a class="smooth-scroll"
+							href="mailto:rangeeth@live.com"
+							alt="give feedback to nrs24@live.com" tabindex="100">Email Us</a></div>
+						</p>
+					</div>
+
+					<p class="center">
+						<small class="copyright" tabindex="100"> Copyright � 2016.
+							All rights reserved.</small>
+					</p>
+				</footer>
+			</div>
+		</div>
+    
+  </div>
+  
+  
+
+<!-- imports -->  
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.1/angular.min.js"></script>
+<script src="https://code.angularjs.org/1.3.0-rc.1/angular-route.min.js"></script>
+<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.6.0.js"> </script>
+<script type="text/javascript" src="js/website.js"></script>
+
+<script type="text/javascript" src="js/jquery.min.js"></script> 
+<script type="text/javascript" src="js/jqueryfn.js"></script>
+
+  <!-- WOW JS -->
+    <script src="js/wow/wow.min.js"></script>
+
+<!--     magnific-popup JS
+    <script src="js/magnific-popup/jquery.magnific-popup.min.js"></script>
+ -->
+  
+    <!-- owl carousel JS -->
+    <script src="js/owl-carousel/owl.carousel.min.js"></script>
+
+    <!-- counter -->
+    <script src="js/counter/jquery.waypoints.min.js"></script>
+    <script src="js/counter/jquery.counterup.min.js"></script>
+
+    <!-- easing -->
+    <script src="js/easing/jquery.easing.1.3.js"></script>
+
+<!-- oauth -->
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+</body>
+</html>

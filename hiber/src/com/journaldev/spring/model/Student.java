@@ -19,12 +19,7 @@ public class Student {
 /* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
-	@Override
-	public String toString() {
-		return "Student [sid=" + sid + ", firstName=" + firstName + ", lastName=" + lastName + ", gender=" + gender
-				+ ", email_adr=" + email_adr + ", mobl_nm=" + mobl_nm + ", colg_nm=" + colg_nm + ", colg_join_year="
-				+ colg_join_year + ", adr_ln1=";
-	}
+
 	/*	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO , generator = "student_id_seq")
 	@SequenceGenerator(name="student_id_seq",sequenceName="S_ID_SEQ")
@@ -34,9 +29,8 @@ public class Student {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	int sid;
 	
-	/*@ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "COLLEGE_INFO", joinColumns = { @JoinColumn(name = "STUDENT_ID") }, inverseJoinColumns = { @JoinColumn(name = "COURSE_ID") })
- */
+	
+	
 	@Column(name = "FST_NM", nullable = true)
 	private String firstName; 
 	
@@ -52,29 +46,32 @@ public class Student {
 	@Column(name = "MOBL_NM", nullable = true)
 	private String mobl_nm; 
 	
+	@Column(name = "OCCUPATION", nullable = true)
+	private String occupation; 
+	
+	
+	
 	@Column(name = "COLG_NM", nullable = true)
 	private String colg_nm; 
 	
 	@Column(name = "COLG_JOIN_YEAR", nullable = true)
 	private String colg_join_year; 
 	
-	/*@Column(name = "ADR_LN1", nullable = true)
+	@Column(name = "ADR_LN1", nullable = true)
 	private String adr_ln1; 
 	
 	@Column(name = "ADR_LN2", nullable = true)
 	private String adr_ln2; 
 	
-	@Column(name = "ADR_ID", nullable = true)
-	private String adr_id;
+	@Column(name = "DISTRICT", nullable = true)
+	private String district;
 	
-	@Column(name = "UNIV_ID", nullable = true)
-	private String univ_id;
+	@Column(name = "STATE", nullable = true)
+	private String state;
 	
-	@Column(name = "COURSE_ID", nullable = true)
-	private String course_id;
+	@Column(name = "UNIV_NM", nullable = true)
+	private String univ_nm;
 	
-	String LOGIN_DT;
-	String BROWS_NM;*/
 	/**
 	 * @return the sid
 	 */
@@ -174,101 +171,90 @@ public class Student {
 	/**
 	 * @return the adr_ln1
 	 */
-	/*public String getAdr_ln1() {
+	/**
+	 * @return the occupation
+	 */
+	public String getOccupation() {
+		return occupation;
+	}
+	/**
+	 * @param occupation the occupation to set
+	 */
+	public void setOccupation(String occupation) {
+		this.occupation = occupation;
+	}
+	/**
+	 * @return the adr_ln1
+	 */
+	public String getAdr_ln1() {
 		return adr_ln1;
 	}
-	*//**
+	/**
 	 * @param adr_ln1 the adr_ln1 to set
-	 *//*
+	 */
 	public void setAdr_ln1(String adr_ln1) {
 		this.adr_ln1 = adr_ln1;
 	}
-	*//**
+	/**
 	 * @return the adr_ln2
-	 *//*
+	 */
 	public String getAdr_ln2() {
 		return adr_ln2;
 	}
-	*//**
+	/**
 	 * @param adr_ln2 the adr_ln2 to set
-	 *//*
+	 */
 	public void setAdr_ln2(String adr_ln2) {
 		this.adr_ln2 = adr_ln2;
 	}
-	*//**
-	 * @return the adr_id
-	 *//*
-	public String getAdr_id() {
-		return adr_id;
-	}
-	*//**
-	 * @param adr_id the adr_id to set
-	 *//*
-	public void setAdr_id(String adr_id) {
-		this.adr_id = adr_id;
-	}
-	*//**
-	 * @return the univ_id
-	 *//*
-	public String getUniv_id() {
-		return univ_id;
-	}
-	*//**
-	 * @param univ_id the univ_id to set
-	 *//*
-	public void setUniv_id(String univ_id) {
-		this.univ_id = univ_id;
-	}
-	*//**
-	 * @return the course_id
-	 *//*
-	public String getCourse_id() {
-		return course_id;
-	}*/
-	/**
-	 * @param course_id the course_id to set
-	 */
-	/*public void setCourse_id(String course_id) {
-		this.course_id = course_id;
-	}
-	*/
- 
- /*   private int id;
-     private Set<College> courses;*/
- 
- /*   @Id
-    @GeneratedValue
-    @Column(name = "ID")
-    public int getId() {
-        return id;
-    }
- 
-    public void setId(int id) {
-        this.id = id;
-    }
- */
- /*   @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "STUDENT_COURSE", joinColumns = { @JoinColumn(name = "STUDENT_ID") }, inverseJoinColumns = { @JoinColumn(name = "COURSE_ID") })
-    public Set<College> getCourses() {
-        return courses;
-    }
- 
-    public void setCourses(Set<College> courses) {
-        this.courses = courses;
-    }
- 
- */
 	
- /*   @Version
-    @Column(name = "VERSION", nullable = true)
-    public int getVersion() {
-        return version;
-    }
- 
-    public void setVersion(int version) {
-        this.version = version;
-    }
- */
+	/**
+	 * @return the district
+	 */
+	public String getDistrict() {
+		return district;
+	}
+	/**
+	 * @param district the district to set
+	 */
+	public void setDistrict(String district) {
+		this.district = district;
+	}
+	/**
+	 * @return the state
+	 */
+	public String getState() {
+		return state;
+	}
+	/**
+	 * @param state the state to set
+	 */
+	public void setState(String state) {
+		this.state = state;
+	}
+	/**
+	 * @return the univ_nm
+	 */
+	public String getUniv_nm() {
+		return univ_nm;
+	}
+	/**
+	 * @param univ_nm the univ_nm to set
+	 */
+	public void setUniv_nm(String univ_nm) {
+		this.univ_nm = univ_nm;
+	}
+	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Student [sid=" + sid + ", firstName=" + firstName + ", lastName=" + lastName + ", gender=" + gender
+				+ ", email_adr=" + email_adr + ", mobl_nm=" + mobl_nm + ", occupation=" + occupation + ", colg_nm="
+				+ colg_nm + ", colg_join_year=" + colg_join_year + ", adr_ln1=" + adr_ln1 + ", adr_ln2=" + adr_ln2
+				+ ", district=" + district + ", state=" + state + ", univ_nm=" + univ_nm + "]";
+	}
 	
 	
 }
