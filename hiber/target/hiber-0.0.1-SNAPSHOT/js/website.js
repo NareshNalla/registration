@@ -13,11 +13,12 @@ angular.module('website', ['ngRoute']).
             when('/contact', {templateUrl: 'partials/contact.html', controller: 'AboutCtrl'}).
             when('/home', {templateUrl: 'partials/home.html', controller: 'HomeCtrl'}).
             when('/register', {templateUrl: 'partials/register.html', controller: 'regiCtrl'}).
+            when('/register1', {templateUrl: 'partials/register1.html', controller: 'regiCtrl'}).
             otherwise({redirectTo: '/home'});
         
        
     })
-    .controller('AboutCtrl', function ($scope, StateService) {
+    .controller('AboutCtrl', function ($scope) {
         $scope.title = 'About Page';
         $scope.body = 'This is the about page body';
       
@@ -26,7 +27,7 @@ angular.module('website', ['ngRoute']).
         
        
     })
-    .controller('HomeCtrl', function ($scope, StateService) {
+    .controller('HomeCtrl', function ($scope) {
     	
         $scope.title = 'Home Page';
         $scope.body = 'This is the about home body';
@@ -39,14 +40,14 @@ angular.module('website', ['ngRoute']).
         carousel();
         
     })
-     .controller('GalleryCtrl', function ($scope, StateService, ExperimentsService) {
+     .controller('GalleryCtrl', function ($scope) {
         $scope.title = 'Gallery';
 
         
         $scope.gallerybottom = false;
         $scope.logobottom = false;
     })
-       .controller('regiCtrl', function ($scope, StateService, ExperimentsService) {
+       .controller('regiCtrl', function ($scope) {
         $scope.title = 'Registration';
         
         

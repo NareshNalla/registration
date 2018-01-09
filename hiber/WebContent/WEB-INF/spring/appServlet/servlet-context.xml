@@ -54,9 +54,9 @@
 		destroy-method="close">
 		<beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<beans:property name="url"
-			value="jdbc:mysql://localhost:3306/test" />
+			value="jdbc:mysql://mydb.cpress0rjkw4.us-west-2.rds.amazonaws.com:3306/test" />
 		<beans:property name="username" value="root" />
-		<beans:property name="password" value="test" />
+		<beans:property name="password" value="nareshnalla" />
 	</beans:bean>
 
 	<!-- Hibernate 4 SessionFactory Bean definition -->
@@ -76,6 +76,7 @@
 				<beans:prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect
 				</beans:prop>
 				<beans:prop key="hibernate.show_sql">true</beans:prop>
+				<beans:prop key="hibernate.hbm2dll.auto">create-drop</beans:prop> 
 			</beans:props>
 		</beans:property>
 	</beans:bean>

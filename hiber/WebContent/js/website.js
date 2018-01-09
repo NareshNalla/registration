@@ -18,7 +18,7 @@ angular.module('website', ['ngRoute']).
         
        
     })
-    .controller('AboutCtrl', function ($scope, StateService) {
+    .controller('AboutCtrl', function ($scope) {
         $scope.title = 'About Page';
         $scope.body = 'This is the about page body';
       
@@ -27,7 +27,7 @@ angular.module('website', ['ngRoute']).
         
        
     })
-    .controller('HomeCtrl', function ($scope, StateService) {
+    .controller('HomeCtrl', function ($scope) {
     	
         $scope.title = 'Home Page';
         $scope.body = 'This is the about home body';
@@ -40,14 +40,14 @@ angular.module('website', ['ngRoute']).
         carousel();
         
     })
-     .controller('GalleryCtrl', function ($scope, StateService, ExperimentsService) {
+     .controller('GalleryCtrl', function ($scope) {
         $scope.title = 'Gallery';
 
         
         $scope.gallerybottom = false;
         $scope.logobottom = false;
     })
-       .controller('regiCtrl', function ($scope, StateService, ExperimentsService) {
+       .controller('regiCtrl', function ($scope) {
         $scope.title = 'Registration';
         
         
