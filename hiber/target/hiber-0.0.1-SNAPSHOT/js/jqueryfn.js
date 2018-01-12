@@ -3,7 +3,9 @@ NAVIGATION
 ====================================================*/
 //Show/Hide transparent black navigation
 $(function () {
+
 $(window).scroll(function () {
+	scrollFunction();
 
 if ($(this).scrollTop() < 40) {
 //hide nav
@@ -19,10 +21,11 @@ $("#back-to-top").fadeIn();
 });
 //Smooth scrolling
 $(function () {
-	
+
     $("a.smooth-scroll1").click(function (event) {
 
-      
+       /* event.preventDefault();*/
+
         // get/return id like #about, #work, #team and etc
         var section = $(this).attr("href");
 
@@ -96,6 +99,3 @@ $(function () {
 		}
     });
 });
-
-/*register*/
-

@@ -1,93 +1,138 @@
 angular.module('website', ['ngRoute']).
     config(function ($routeProvider) {
         $routeProvider.
-            when('/about', {templateUrl: 'partials/about.html', controller: 'AboutCtrl'}).
-            when('/ourVision', {templateUrl: 'partials/ourVision.html', controller: 'AboutCtrl'}).
-            when('/administration', {templateUrl: 'partials/administration.html', controller: 'AboutCtrl'}).
-            when('/gallery', {templateUrl: 'partials/gallery.html', controller: 'GalleryCtrl'}).
-            when('/gphotos', {templateUrl: 'partials/gphotos.html', controller: 'GalleryCtrl'}).
-            when('/gvideo', {templateUrl: 'partials/gvideo.html', controller: 'GalleryCtrl'}).
-            when('/gmedia', {templateUrl: 'partials/gmedia.html', controller: 'GalleryCtrl'}).
-            when('/gpress', {templateUrl: 'partials/gpress.html', controller: 'GalleryCtrl'}).
-            when('/studentCorner', {templateUrl: 'partials/studentCorner.html', controller: 'studentCorner'}).
-            when('/contact', {templateUrl: 'partials/contact.html', controller: 'AboutCtrl'}).
+            when('/about', {templateUrl: 'partials/about.html'}).
+            when('/ourVision', {templateUrl: 'partials/ourVision.html'}).
+            when('/administration', {templateUrl: 'partials/administration.html'}).
+            when('/gallery', {templateUrl: 'partials/gallery.html'}).
+            when('/gphotos', {templateUrl: 'partials/gphotos.html'}).
+            when('/gvideo', {templateUrl: 'partials/gvideo.html'}).
+            when('/gmedia', {templateUrl: 'partials/gmedia.html'}).
+            when('/gpress', {templateUrl: 'partials/gpress.html'}).
+            when('/studentCorner', {templateUrl: 'partials/studentCorner.html'}).
+            when('/contact', {templateUrl: 'partials/contact.html'}).
             when('/home', {templateUrl: 'partials/home.html', controller: 'HomeCtrl'}).
             when('/register', {templateUrl: 'partials/register.html', controller: 'regiCtrl'}).
-            when('/register1', {templateUrl: 'partials/register1.html', controller: 'regiCtrl'}).
+            when('/regiSucess', {templateUrl: 'partials/regiSucess.html'}).
+            when('/regiFail', {templateUrl: 'partials/regiFail.html'}).
             otherwise({redirectTo: '/home'});
         
        
     })
-    .controller('AboutCtrl', function ($scope) {
-        $scope.title = 'About Page';
-        $scope.body = 'This is the about page body';
-      
-        $scope.gallerybottom = true;
-        $scope.logobottom = true;
-        
-       
-    })
+   
     .controller('HomeCtrl', function ($scope) {
     	
         $scope.title = 'Home Page';
         $scope.body = 'This is the about home body';
-       
         $scope.gallerybottom = false;
         $scope.logobottom = true;
-       
+       console.log("in home");
      
         $scope.myIndex = 0;
         carousel();
         
     })
-     .controller('GalleryCtrl', function ($scope) {
-        $scope.title = 'Gallery';
-
-        
-        $scope.gallerybottom = false;
-        $scope.logobottom = false;
-    })
-       .controller('regiCtrl', function ($scope) {
+    
+    .controller('regiCtrl', function ($scope,$http,$location) {
         $scope.title = 'Registration';
-        
-        
+        console.log("in regi");
         $scope.gallerybottom = false;
         $scope.logobottom = false;
-    })
+       $scope.submit = function() {
+        	
+          
+            $scope.postdata = function (firstName, lastName, gender,email_adr,mobl_nm,
+            		occupation,colg_nm,colg_join_year,adr_ln1,adr_ln2,district,state,univ_nm) {
+            	var data = {
+            			firstName: $scope.student.firstName,
+            			lastName: $scope.student.lastName,
+            			gender: $scope.student.gender,
+            			email_adr: $scope.student.email_adr,
+            			mobl_nm: $scope.student.mobl_nm,
+            			occupation: $scope.student.occupation,
+            			colg_nm: $scope.student.colg_nm,
+            			colg_join_year: $scope.student.colg_join_year,
+            			adr_ln1: $scope.student.adr_ln1,
+            			adr_ln2: $scope.student.adr_ln2,
+            			district: $scope.student.district,
+            			state: $scope.student.state,
+            			univ_nm: $scope.student.univ_nm
+            			
+            	};
+            	var config= {
+            			headers: {"Content-Type": "application/json"} 
+            	}
+
+            	//Call the services
+            	$http.post('http://54.200.164.87:8080/hiber/register', JSON.stringify(data),config).then(function (response) {
+            		if (response.data){
+            			alert(response);
+            			$scope.msg = "Post Data Submitted Successfully!";
+            			$location.path("/regiSucess");
+            			/*$window.location.host+ "/regiSucess";*/
+            			
+/*            			var url = "http://" + $window.location.host + "/regiSucess";
+            	        console.log(url);
+            	        $window.location.href = url;
+*/            	        
+            			
+            		}
+
+            	}, function (response) {
+            		alert(response);
+            		$scope.msg = "Service not Exists";
+            		$location.path("/regiFail");
+            		$scope.statusval = response.status;
+            		$scope.statustext = response.statusText;
+            		$scope.headers = response.headers();
+
+            	});
+
+            };
+            $scope.postdata();
+
+        };
+        
+        
+        })
    
-     .directive('experiment', function(){
+     .directive('gotop', function(){
         var linker = function (scope, element, attrs) {
             element.on('click', function(){
-                scope.doExperiment();
+                scope.goTop();
             })
         };
 
         var controller =  function($scope){
-            $scope.doExperiment = function() {
+            $scope.goTop = function() {
                 $scope.$apply(function(){
-                    $scope.experiment.completed++;
+                    //
+                	document.body.scrollTop = 0;
+                    document.documentElement.scrollTop = 0;
                 });
             };
         };
 
         return {
             scope: true,
-            restrict: 'E',
-            template: '<div class="experiment">' +
-                '<h3>{{experiment.name}}</h3>' +
-                '<p>{{experiment.description}}</p>' +
-                '<p><strong>{{experiment.completed}}</strong></p>' +
-                '</div>',
+            restrict: 'EA',
+            /*template: '',*/
             link: linker,
             controller: controller
         }
     });
 
-var myIndex = 0;
+myIndex =0; 
 function carousel() {
-
+	
     var i;
     var x = document.getElementsByClassName("mySlides");
+    if(x == undefined){		
+		return;
+	}
+    if(myIndex == undefined){		
+		return;
+	}
     for (i = 0; i < x.length; i++) {
        x[i].style.display = "none";  
     }
@@ -97,4 +142,13 @@ function carousel() {
     setTimeout(carousel, 5000); // Change image every 5 seconds
 }
 
-funct
+/*//goto top
+window.onscroll = function() {scrollFunction()};*/
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
