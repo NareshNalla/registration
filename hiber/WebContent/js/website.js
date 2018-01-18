@@ -13,8 +13,9 @@ angular.module('website', ['ngRoute']).
             when('/contact', {templateUrl: 'partials/contact.html'}).
             when('/home', {templateUrl: 'partials/home.html', controller: 'HomeCtrl'}).
             when('/register', {templateUrl: 'partials/register.html', controller: 'regiCtrl'}).
-            when('/regiSucess', {templateUrl: 'partials/regiSucess.html'}).
-            when('/regiFail', {templateUrl: 'partials/regiFail.html'}).
+            when('/regiSucess', {templateUrl: 'partials/regiSucess.html',controller: 'regiCtrlS'}).
+            when('/regiFail', {templateUrl: 'partials/regiFail.html',controller: 'regiCtrlF'}).
+            when('/guidance', {templateUrl: 'partials/guidance.html'}).
             otherwise({redirectTo: '/home'});
         
        
@@ -24,9 +25,9 @@ angular.module('website', ['ngRoute']).
     	
         $scope.title = 'Home Page';
         $scope.body = 'This is the about home body';
-        $scope.gallerybottom = false;
+        $scope.gallerybottom = true;
         $scope.logobottom = true;
-       console.log("in home");
+        console.log("in home");
      
         $scope.myIndex = 0;
         carousel();
@@ -39,8 +40,6 @@ angular.module('website', ['ngRoute']).
         $scope.gallerybottom = false;
         $scope.logobottom = false;
        $scope.submit = function() {
-        	
-          
             $scope.postdata = function (firstName, lastName, gender,email_adr,mobl_nm,
             		occupation,colg_nm,colg_join_year,adr_ln1,adr_ln2,district,state,univ_nm) {
             	var data = {
@@ -91,10 +90,32 @@ angular.module('website', ['ngRoute']).
             };
             $scope.postdata();
 
-        };
-        
-        
+        };   
         })
+        .controller('regiCtrlS', function ($scope) {
+    	
+        /*$scope.title = 'Home Page';
+        $scope.body = 'This is the about home body';
+        $scope.gallerybottom = false;
+        $scope.logobottom = true;
+       console.log("in home");
+     
+        $scope.myIndex = 0;
+        carousel();*/
+        
+    })
+        .controller('regiCtrlF', function ($scope) {
+    	
+        /*$scope.title = 'Home Page';
+        $scope.body = 'This is the about home body';
+        $scope.gallerybottom = false;
+        $scope.logobottom = true;
+       console.log("in home");
+     
+        $scope.myIndex = 0;
+        carousel();*/
+        
+    })
    
      .directive('gotop', function(){
         var linker = function (scope, element, attrs) {
@@ -139,7 +160,7 @@ function carousel() {
     myIndex++;
     if (myIndex > x.length) {myIndex = 1}    
     x[myIndex-1].style.display = "block";  
-    setTimeout(carousel, 5000); // Change image every 5 seconds
+    setTimeout(carousel, 10000); // Change image every 10 seconds
 }
 
 /*//goto top

@@ -10,11 +10,15 @@ $(window).scroll(function () {
 if ($(this).scrollTop() < 40) {
 //hide nav
 $("nav").removeClass("ttswa-top-nav");
+$("nav").removeClass("navbar-fixed-top");
 $("#back-to-top").fadeOut();
 
 } else {
 //show nav
 $("nav").addClass("ttswa-top-nav");
+$("nav").addClass("navbar-fixed-top");
+$("div#logoFront").addClass("logo2");
+
 $("#back-to-top").fadeIn();
 }
 });
