@@ -39,6 +39,10 @@ angular.module('website', ['ngRoute']).
         console.log("in regi");
         $scope.gallerybottom = false;
         $scope.logobottom = false;
+        
+        $scope.mobl_nm_p = /^\+?\d{10}$/;
+        $scope.email_adr_p = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+        
        $scope.submit = function() {
             $scope.postdata = function (firstName, lastName, gender,email_adr,mobl_nm,
             		occupation,colg_nm,colg_join_year,adr_ln1,adr_ln2,district,state,univ_nm) {
